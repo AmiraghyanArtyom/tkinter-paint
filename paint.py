@@ -47,3 +47,7 @@ class Paint(object):
         self.c.bind('<B1-Motion>', self.paint)
         self.c.bind('<B3-Motion>', self.paint)
         self.c.bind('<ButtonRelease-1>', self.reset)
+
+#функция использования ручки
+    def use_pen(self):
+        self.activateButton(self.pen_button)
