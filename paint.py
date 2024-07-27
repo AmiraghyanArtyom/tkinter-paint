@@ -51,3 +51,7 @@ class Paint(object):
 #функция использования ручки
     def use_pen(self):
         self.activateButton(self.pen_button)
+#функция использования цвета
+    def choose_colour(self):
+        self.eraser_on = False
+        self.colour = askcolor(color=self.colour)[1]
