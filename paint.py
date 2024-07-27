@@ -55,3 +55,6 @@ class Paint(object):
     def choose_colour(self):
         self.eraser_on = False
         self.colour = askcolor(color=self.colour)[1]
+# функция использования ластика
+    def use_eraser(self):
+        self.activateButton(self.eraser_button, eraser_mode=True)
