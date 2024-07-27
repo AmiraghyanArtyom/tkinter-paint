@@ -64,3 +64,20 @@ class Paint(object):
         some_button.config(relief=SUNKEN)
         self.active_button = some_button
         self.eraser_on = eraser_mode
+#создание линии и выбор ширины линии в соответствии с масштабом
+    def paint(self, event):
+        self.line_width = self.choose_size_button.get()
+        paint_colour = 'black' if self.eraser_on else self.colour
+        if self.old_x and self.old_y:
+            self.c.create_line(self.old_x, self.old_y, event.x, event.y,
+                               width=self.line_width, fill=paint_colour,
+                               capstyle=ROUND, smooth=TRUE, splinesteps=36)
+        self.old_x = event.x
+        self.old_y = event.y
+
+    # Сброс фона для рисования
+    def reset(self, event):
+        self.old_x, self.old_y = None, None
+
+if __name__ == '__main__':
+    Paint()
