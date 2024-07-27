@@ -58,3 +58,9 @@ class Paint(object):
 # функция использования ластика
     def use_eraser(self):
         self.activateButton(self.eraser_button, eraser_mode=True)
+#При нажатии на кнопку она будет поднята
+    def activateButton(self, some_button, eraser_mode=False):
+        self.active_button.config(relief=RAISED)
+        some_button.config(relief=SUNKEN)
+        self.active_button = some_button
+        self.eraser_on = eraser_mode
